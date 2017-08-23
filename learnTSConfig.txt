@@ -1,0 +1,2 @@
+"noEmitOnError": true
+// this makes your ts not compile as js if there is an error
