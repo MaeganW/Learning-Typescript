@@ -57,3 +57,63 @@ let newMultiply: (val1: number, val2: number) => number;
 // newMultiply = greet;    THIS WILL ERROR
 newMultiply = multiply;
 console.log(newMultiply(77, 88));
+
+//objects
+let userData: {name: string, age: number} = {
+    name: "Maegan", //infers string
+    age: 26 //infers number
+}
+// userData = {      //THIS WILL ERROR
+//     a: 'me',
+//     b: 21
+// }
+userData = {
+    age: 26,
+    name: "Maegan"
+}
+
+//complex objects
+let complex: {data: number[], output: (all: boolean) => number[]} = {
+    data: [22, 22.3, 500],
+    output: function(all: boolean): number[] {
+        return this.data;
+    }
+}
+
+//type alias = create a 'class-like' object for a saved type
+type Complex = {data: number[], output: (all: boolean) => number[]};
+let complex2: Complex = {
+    data: [22, 22.3, 500],
+    output: function(all: boolean): number[] {
+        return this.data;
+    }
+}
+
+//union types - can chain more than one type
+let myAge: number | string = 22;
+myAge = '23';
+
+//check types
+let a = 55
+if (typeof a == 'number') {
+    console.log('a is number');
+} else if (typeof a == 'string') {
+    console.log('a is a string');
+}
+
+//never type
+//it's not returning nothing, like void
+//it's NEVER returning anything
+function neverReturns(): never {
+    throw new Error('an error');
+}
+
+//Nullable types
+//"strictNullChecks": true
+//add the above to the tsconfig file to make null types strict like the rest
+//undefined is special and can be reassigned as null
+//others could not unless you add a union type - like string | null
+let b = null;
+b = 'sdfsd';
+//after adding the above script, THIS ABOVE CODE WOULD THROW AN ERROR
+
