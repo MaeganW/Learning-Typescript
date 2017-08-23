@@ -1,3 +1,4 @@
+//Learning Types
 
 //assign types
 let hello: string = "hello";

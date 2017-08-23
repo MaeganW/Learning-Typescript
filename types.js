@@ -1,4 +1,5 @@
 "use strict";
+//Learning Types
 //assign types
 var hello = "hello";
 hello = "howdy";

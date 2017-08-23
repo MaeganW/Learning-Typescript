@@ -1,2 +1,5 @@
 "noEmitOnError": true
 // this makes your ts not compile as js if there is an error
+
+"strictNullChecks": true
+//add the above to the tsconfig file to make null types strict like the rest
