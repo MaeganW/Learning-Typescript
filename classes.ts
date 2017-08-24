@@ -38,3 +38,30 @@ class Helpers {
 // instantiating that class
 console.log(2 * Helpers.PI);
 console.log(Helpers.calculateCircumference(22));
+
+//abstract classes
+// cannot be instantiated, must always be inherited (extended)
+abstract class Project {
+    projectName: string = "Default";
+    budget: number;
+
+    abstract changeName(name: string): void;
+
+    calcBudget() {
+        return this.budget * 2;
+    }
+}
+
+class ITProject extends Project {
+    changeName(name: string): void {
+        this.projectName = name;
+    }
+}
+
+// let newProject = new Project();
+// THE ABOVE THROWS AN ERROR AS PROJECT CANNOT BE INSTANTIATED
+// THIS IS BECAUSE IT IS ABSTRACT - MUST ONLY BE EXTENDED
+let newProject = new ITProject();
+console.log(newProject);
+newProject.changeName('Maegan Takes Over the World');
+console.log(newProject);
