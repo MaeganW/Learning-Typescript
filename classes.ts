@@ -25,3 +25,16 @@ console.log(lion);
 console.log(lion.species, lion.animalName);
 lion.printAge();
 // lion.setType('awesome animal');  //won't work with private method
+
+// static properties and methods
+class Helpers {
+    static PI: number = 3.14;
+    static calculateCircumference(diameter: number): number {
+        return this.PI * diameter;
+    }
+}
+// static allows you to access a property
+// or a method from within a class without
+// instantiating that class
+console.log(2 * Helpers.PI);
+console.log(Helpers.calculateCircumference(22));
