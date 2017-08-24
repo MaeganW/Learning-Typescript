@@ -74,3 +74,39 @@ var newProject = new ITProject();
 console.log(newProject);
 newProject.changeName('Maegan Takes Over the World');
 console.log(newProject);
+//getters and setters
+var Plant = (function () {
+    function Plant() {
+        this._species = "Default";
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        //watch for this error:
+        //A 'set' accessor cannot have a return type annotation.
+        //this means that I tried to say
+        //set species(value: string): string { func logic here...}
+        //this is incorrect syntax for a setter
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+            else {
+                this._species = "Default";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var plant = new Plant();
+console.log(plant.species); // this will grab the default
+// the above console log is calling the get species method,
+// but it is calling it like a property instead of a method,
+// which normally would be called as console.log(plant.species());
+plant.species = "XY";
+console.log(plant.species); //thiis is also default
+plant.species = "Maegan's Plant";
+console.log(plant.species); //this will return "Maegan's Plant"
