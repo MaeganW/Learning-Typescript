@@ -1,5 +1,5 @@
 "use strict";
-//classes
+//====CLASSES====
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -31,7 +31,7 @@ console.log(lion);
 console.log(lion.species, lion.animalName);
 lion.printAge();
 // lion.setType('awesome animal');  //won't work with private method
-// static properties and methods
+//====STATIC PROPERTIES AND METHODS====
 var Helpers = (function () {
     function Helpers() {
     }
@@ -46,7 +46,7 @@ var Helpers = (function () {
 // instantiating that class
 console.log(2 * Helpers.PI);
 console.log(Helpers.calculateCircumference(22));
-//abstract classes
+//====ABSTRACT CLASSES====
 // cannot be instantiated, must always be inherited (extended)
 var Project = (function () {
     function Project() {
@@ -74,7 +74,7 @@ var newProject = new ITProject();
 console.log(newProject);
 newProject.changeName('Maegan Takes Over the World');
 console.log(newProject);
-//getters and setters
+//====GETTERS AND SETTERS====
 var Plant = (function () {
     function Plant() {
         this._species = "Default";
@@ -110,3 +110,5 @@ plant.species = "XY";
 console.log(plant.species); //thiis is also default
 plant.species = "Maegan's Plant";
 console.log(plant.species); //this will return "Maegan's Plant"
+//LOOK BACK AT LESSON 64 FOR SINGLEONS AND PRIVATE CONSTRUCTORS
+//LESSON 65 FOR THE READONLY PROPERTY 
