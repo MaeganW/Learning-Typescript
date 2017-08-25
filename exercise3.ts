@@ -1,12 +1,13 @@
+// Exercise 1 - basic class
 class Car2 {
     name: string;
-    public acceleration: number = 0;
+    acceleration: number = 0;
 
     constructor(name: string){
         this.name = name;
     }
  
-    honk(): void {
+    honk() {
         console.log("Toooooooooot!");
     };
  
@@ -26,27 +27,31 @@ console.log(newCar.acceleration);
 
 console.log(('............................'));
  
-// Exercise 2 - Two objects, based on each other ...
+// Exercise 2 - INHERITANCE - Two objects, based on each other ...
 class BaseObject {
-    width: number = 5;
-    length: number = 5;
+    width = 5;  // typescript can infer type
+    length = 5;  // typescript can infer type
+};
 
-    calcSize(width?: number, length?: number): number {
+class Rectangle extends BaseObject {
+    calcSize() {
         return this.width * this.length;
     }
-};
-const rectangle = new BaseObject();
+}
+
+const rectangle = new Rectangle();
 console.log(rectangle.calcSize());
 rectangle.width = 22;
 rectangle.length = 15;
 console.log(rectangle.calcSize());
-// console.log(rectangle.calcSize(3, 3));
 
 console.log(('............................'));
  
 // Exercise 3 - Make sure to compile to ES5 (set the target in tsconfig.json)
+// ES5 supports getters and setters
+// type tsc -t ES5 when compiling if this is an issue
 class Person {
-    _firstName: string = "Lily";
+    private _firstName: string = "Lily";
 
     get firstName(){
         return this._firstName;
