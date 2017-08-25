@@ -26,3 +26,16 @@ console.log('just another rec: ', MyMath.calcRec(4, 7));
 
 //WATCH LESSON 72 TO USE THE REFERENCE SYNTAX
 //FOR IMPORTING NAMESPACES
+
+//You can also have namespaces nested within namespaces
+
+
+
+
+// ====MODULES====
+
+//need to install a module loader
+//npm install systemjs --save
+//REFER TO LESSON 76 FOR MORE INFO ABOUT
+//USING MODULES AND THE SETUP FOR THE 
+//MODULE LOADER
